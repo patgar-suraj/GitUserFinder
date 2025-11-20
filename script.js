@@ -4,7 +4,7 @@ let card = document.querySelector(".card");
 
 function getProfileData(user) {
     return fetch(`https://api.github.com/users/${user}`).then(raw => {
-        if (!raw.ok) throw new Error("User not Found!!!");
+        if (!raw.ok) throw new Error("User not Found!");
         return raw.json();
     });
 };
@@ -63,6 +63,6 @@ btn.addEventListener("click", function () {
             decorateProfileData(data);
         });
     } else {
-        alert();
+        alert("Invalid User Name!");
     };
 });
